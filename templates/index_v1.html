@@ -539,6 +539,9 @@
   .readonly-note svg{width:13px;height:13px;flex:0 0 auto;margin-top:1px;color:var(--brass-dark);}
 
   /* ---------- Map area ---------- */
+  /* The map no longer bleeds edge-to-edge: it sits as a bounded,
+     labelled "plate" with a visible parchment mat around it, like a
+     surveyed map mounted for a case file rather than a full-bleed app map. */
   #map-area{
     flex:1 1 auto;
     min-width:0;
@@ -574,7 +577,7 @@
     background:var(--ink);
   }
   #map .leaflet-tile-pane{
-    filter:invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+    filter:sepia(10%) hue-rotate(45deg) saturate(120%) brightness(93%) contrast(108%);
   }
   .leaflet-popup-content-wrapper{
     border-radius:2px;
@@ -870,7 +873,7 @@
 var LS_API_BASE = "sep_api_base";
 var LS_ACCESS   = "sep_access";
 var LS_REFRESH  = "sep_refresh";
-var DEFAULT_API_BASE = "https://soecopro-ten.vercel.app";
+var DEFAULT_API_BASE = "http://127.0.0.1:8000";
 var DEFAULT_CENTER = [40.0844, 65.3792]; // Navoiy, UZ
 
 function getApiBase(){
@@ -921,6 +924,9 @@ function toast(msg, kind){
   }, 3600);
 }
 
+/* Normalize the Problem.location JSONField into {lat, lng}.
+   The backend stores it as a free-form JSONField, so we accept a
+   few plausible shapes defensively. */
 function parseLocation(loc){
   if(!loc) return null;
   if(Array.isArray(loc) && loc.length >= 2){
@@ -973,13 +979,14 @@ function doRefresh(){
   return refreshing;
 }
 
+/* Authenticated request with a single automatic retry after refresh. */
 function apiFetch(path, opts){
   return rawFetch(path, opts).then(function(res){
     if(res.status === 401 && state.refresh){
       return doRefresh().then(function(){
         return rawFetch(path, opts);
       }).catch(function(){
-        return res;
+        return res; // fall through with original 401
       });
     }
     return res;
@@ -994,6 +1001,7 @@ function apiJson(path, opts){
   });
 }
 
+/* Fetch every page of a DRF-paginated endpoint. */
 function fetchAllPages(path){
   var results = [];
   function step(p){
@@ -1139,6 +1147,7 @@ function enterApp(){
 
 $("#logout-btn").addEventListener("click", logout);
 
+/* Attempt silent session restore on load */
 function bootstrap(){
   $("#login-screen").classList.add("hidden");
   $("#app-screen").classList.add("hidden");
@@ -1189,14 +1198,10 @@ var addIcon = L.divIcon({
 
 function initMap(){
   state.map = L.map("map", {zoomControl:true}).setView(DEFAULT_CENTER, 12);
-  // L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  //   maxZoom:19,
-  //   attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  // }).addTo(state.map);
-
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+    maxZoom:20,
+    subdomains:"abcd",
+    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
   }).addTo(state.map);
 
   state.map.on("click", function(e){
@@ -1250,6 +1255,7 @@ function focusMarker(id){
   }
 }
 
+/* ---- add-problem placement mode ---- */
 var pendingMarker = null;
 function enterAddMode(){
   state.addMode = true;
@@ -1390,6 +1396,7 @@ $("#back-btn").addEventListener("click", function(){
   showListView();
 });
 
+/* ---- ADMIN: read-only detail ---- */
 function renderAdminDetail(p){
   $("#detail-heading").textContent = p.title;
   var pill = $("#detail-status-pill");
@@ -1415,6 +1422,7 @@ function renderAdminDetail(p){
     (loc ? '<div class="coord-box">' + loc.lat.toFixed(5) + ', ' + loc.lng.toFixed(5) + '</div>' : '');
 }
 
+/* ---- STUDENT: editable detail ---- */
 function renderStudentDetail(p){
   $("#detail-heading").textContent = "Редактирование";
   $("#detail-status-pill").classList.add("hidden");
