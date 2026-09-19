@@ -4,6 +4,7 @@ django-cors-headers
 python-decouple
 djangorestframework-simplejwt
 Pillow
+dj-database-url
 
 #FOR CLOUDFLARE
 django-storages
