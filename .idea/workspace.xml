@@ -14,6 +14,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -26,61 +27,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.5625292423444046" />
-      <entry key="MS500" value="1.8913104958969713" />
-      <entry key="S2" value="1.9716441863386442" />
-      <entry key="S5" value="1.9903667331463122" />
-      <entry key="S10" value="2.1649730061691344" />
-      <entry key="S30" value="6.7732527171010855" />
-      <entry key="S60" value="18.008713196793302" />
-      <entry key="M2" value="41.007495931235034" />
-      <entry key="M5" value="84.59064678410371" />
-      <entry key="M10" value="133.32673535935513" />
-      <entry key="M15" value="172.44522545767026" />
-      <entry key="M30" value="246.1840163029707" />
-      <entry key="H1" value="307.890855150319" />
-      <entry key="H2" value="348.6014624795421" />
-      <entry key="H4" value="372.0949997438713" />
-      <entry key="D1" value="393.50373727486357" />
-      <entry key="W1" value="397.35314317238664" />
+      <entry key="MS100" value="1.0000000884845002" />
+      <entry key="MS500" value="1.0388499879316415" />
+      <entry key="S2" value="1.516730412015288" />
+      <entry key="S5" value="2.432579517253521" />
+      <entry key="S10" value="3.777041476333929" />
+      <entry key="S30" value="9.09619459334768" />
+      <entry key="S60" value="14.97481402054227" />
+      <entry key="M2" value="20.88673047377506" />
+      <entry key="M5" value="29.112271040684753" />
+      <entry key="M10" value="52.90696261566609" />
+      <entry key="M15" value="85.40610706924504" />
+      <entry key="M30" value="173.26075925580218" />
+      <entry key="H1" value="270.5590182526816" />
+      <entry key="H2" value="345.71003167113014" />
+      <entry key="H4" value="392.8704949520441" />
+      <entry key="D1" value="438.199051921499" />
+      <entry key="W1" value="446.5840165917579" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="3.86855467387919E-281" />
-      <entry key="MS500" value="8.347235596989438E-57" />
-      <entry key="S2" value="1.2499991011507154E-14" />
-      <entry key="S5" value="4.008942332476418E-6" />
-      <entry key="S10" value="0.002812618338979759" />
-      <entry key="S30" value="0.22442674551749908" />
-      <entry key="S60" value="0.6959679830208877" />
-      <entry key="M2" value="1.3886288184223083" />
-      <entry key="M5" value="4.681587529469507" />
-      <entry key="M10" value="15.325334304625835" />
-      <entry key="M15" value="26.170535536151494" />
-      <entry key="M30" value="47.80838833753337" />
-      <entry key="H1" value="66.18053758596557" />
-      <entry key="H2" value="78.30886105554916" />
-      <entry key="H4" value="85.30030877054219" />
-      <entry key="D1" value="91.66436099686386" />
-      <entry key="W1" value="92.80786857477973" />
+      <entry key="MS100" value="8.731815770301003E-24" />
+      <entry key="MS500" value="2.658664993660819E-5" />
+      <entry key="S2" value="0.10856340977001834" />
+      <entry key="S5" value="0.6168495505017714" />
+      <entry key="S10" value="1.1142570176237978" />
+      <entry key="S30" value="2.1776744418795873" />
+      <entry key="S60" value="3.5763460665559457" />
+      <entry key="M2" value="5.143321242187465" />
+      <entry key="M5" value="6.756559374319169" />
+      <entry key="M10" value="9.647752496785696" />
+      <entry key="M15" value="15.044412271818873" />
+      <entry key="M30" value="33.40124834051627" />
+      <entry key="H1" value="56.350226922401255" />
+      <entry key="H2" value="74.95758985291363" />
+      <entry key="H4" value="86.88158434144425" />
+      <entry key="D1" value="98.47773017685886" />
+      <entry key="W1" value="100.63529300667275" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.5093037601878745" />
-      <entry key="MS500" value="1.8782462600165812" />
-      <entry key="S2" value="1.9682305458626088" />
-      <entry key="S5" value="1.9889896353356704" />
-      <entry key="S10" value="2.166617819808175" />
-      <entry key="S30" value="6.985503761824471" />
-      <entry key="S60" value="18.68495242328997" />
-      <entry key="M2" value="42.374790179562034" />
-      <entry key="M5" value="89.24588447526885" />
-      <entry key="M10" value="148.6121879423013" />
-      <entry key="M15" value="198.57034410060584" />
-      <entry key="M30" value="293.9503274326001" />
-      <entry key="H1" value="374.04195825324115" />
-      <entry key="H2" value="426.8928074115088" />
-      <entry key="H4" value="457.38573989078765" />
-      <entry key="D1" value="485.16638018092914" />
-      <entry key="W1" value="490.16076313548075" />
+      <entry key="MS100" value="0.0032395298411881045" />
+      <entry key="MS500" value="0.3307283155030212" />
+      <entry key="S2" value="1.2346576668904672" />
+      <entry key="S5" value="2.752399387794826" />
+      <entry key="S10" value="4.66055786498308" />
+      <entry key="S30" value="11.129770326410142" />
+      <entry key="S60" value="18.441376730720545" />
+      <entry key="M2" value="25.955082550334456" />
+      <entry key="M5" value="35.830631208914" />
+      <entry key="M10" value="62.52814560133868" />
+      <entry key="M15" value="100.42343622073653" />
+      <entry key="M30" value="206.63221090488085" />
+      <entry key="H1" value="326.88401671178195" />
+      <entry key="H2" value="420.6507812281561" />
+      <entry key="H4" value="479.7422987797997" />
+      <entry key="D1" value="536.6749308855335" />
+      <entry key="W1" value="547.2190392531555" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
@@ -97,6 +98,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",

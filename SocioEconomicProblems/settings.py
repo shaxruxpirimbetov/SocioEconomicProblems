@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config("SECRET_KEY")
-DEBUG = config("DEBUG", default=False)
+DEBUG = False # config("DEBUG", default=False)
 ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="").split(",")
 AUTH_USER_MODEL = "user.User"
 
@@ -43,7 +43,7 @@ ROOT_URLCONF = 'SocioEconomicProblems.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
