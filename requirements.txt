@@ -5,7 +5,7 @@ python-decouple
 djangorestframework-simplejwt
 Pillow
 dj-database-url
-psycopg2[binary]
+psycopg[binary]
 
 #FOR CLOUDFLARE
 django-storages
